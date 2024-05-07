@@ -31,6 +31,7 @@ function drawGrid(gridSize){
         gridDiv.setAttribute('class', 'gridBox');
         gridDiv.style.height = sqSize+'px';
         gridDiv.style.width = sqSize+'px';
+   
         gridContainer.appendChild(gridDiv);
 
     } 
@@ -42,7 +43,6 @@ function drawGrid(gridSize){
             e.target.style.background = "white";
         });
     });
-
 }
 
 function removeGridDivNodes(gridContainer){
@@ -50,6 +50,7 @@ function removeGridDivNodes(gridContainer){
     while(gridContainer.firstChild){    
         gridContainer.removeChild(gridContainer.lastChild);
     }
+    gridContainer.style.border = 'solid';
 }
 
 const createGridBtn = document.querySelector('#createGridBtn');
