@@ -57,9 +57,26 @@ const createGridBtn = document.querySelector('#createGridBtn');
 createGridBtn.addEventListener('click',()=> {
     gridSize = prompt("Enter the width of the grid. Max 100."); 
    if ((gridSize > 100) || (gridSize < 1)){
-        alert("Input is invalid");
-    } else {
-   
-        drawGrid(gridSize);
+        alert("Input is invalid - Please enter a number");
+        return;
     }
+   
+    if (!(isInt(gridSize))){
+        alert("Input is invalid - Please enter a number");
+        return false;
+    }
+
+    drawGrid(gridSize);
+    
 });
+
+function isInt(value){
+    var x;
+    if(isNaN(value)){
+        return false;
+    }
+
+    x = parseFloat(value);
+    return (x | 0) === x;
+
+}
